@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string mySqlConnection = builder.Configuration.GetConnectionString("default");
+string mySqlConnection = builder.Configuration.GetConnectionString("default") ?? string.Empty;
 builder.Services.AddDbContext<ApiContext>(options => 
     options.UseMySql(mySqlConnection, 
     ServerVersion.AutoDetect(mySqlConnection)));

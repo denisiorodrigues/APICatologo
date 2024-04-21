@@ -8,5 +8,5 @@ public class Category
 
   public string? ImageUri { get; set; }
 
-  public ICollection<Product> Products { get; set; }
+  public ICollection<Product>? Products { get; set; }
 }

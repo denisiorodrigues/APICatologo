@@ -1,0 +1,21 @@
+version: '3.8'
+
+services: 
+  db:
+    image: mysql:latest
+    ports: 
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: My_password
+    volumes:
+      - ./data:/var/lib/mysql
+    command: >
+      bash -c "
+      /usr/bin/mysqld --initialize-insecure;
+      /usr/bin/mysqld --user=mysql --skip-networking --socket=/var/run/mysqld/mysqld.sock &
+      mysql -u root -h localhost -P 3306 --protocol=tcp -e \"CREATE USER 'calog-user'@'localhost' IDENTIFIED BY 'My_password';
+      GRANT ALL PRIVILEGES ON *.* TO 'novo_usuario'@'calog-user' WITH GRANT OPTION;
+      FLUSH PRIVILEGES;\"
+      wait
+      "
+    

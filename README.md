@@ -27,12 +27,13 @@ Regras de Regras de negócio
 [] Ser possível obter uma categria por Id
 
 
-# Comando para Entifyframeworkd
-"Criar mirations"
-dotnet ef migratinos add 'nome'
+# Comando para Entityframeworkd
+Criar mirations
+```dotnet ef migrations add 'nome'```
 
-"Remove a migração dos arquivos"
-dotnet ef migratinos remove 'nome'
+Remove a migração dos arquivos
+```dotnet ef migrations remove 'nome'```
 
-"gera as tabelas na base de dados"
-dotnet ef database update
+Gera as tabelas na base de dados
+```dotnet ef database update```
+

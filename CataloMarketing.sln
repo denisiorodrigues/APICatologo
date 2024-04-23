@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CataloMarketing.Api", "Cata
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoMarketing.Test", "CatalogoMarketing.Test\CatalogoMarketing.Test.csproj", "{96D48A6F-0886-4592-A836-07A6CB4FAA37}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{6140AE8E-9C35-4318-8107-4FD40AE78528}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

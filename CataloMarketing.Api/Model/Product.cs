@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CataloMarketing.Api;
 
-[Table("products")]
+[Table("Products")]
 public class Product
 {
   [Key]
@@ -26,10 +26,7 @@ public class Product
   public string? ImageUri { get; set; }
   
   public float Stok { get; set; }
-  
   public DateTime CreatedDate { get; set; }
-  
   public int CategoryId { get; set; }
-  
   public Category? Category { get; set; }
 }

@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CataloMarketing.Api;
 
-[Table("categories")]
+[Table("Categories")]
 public class Category
 {
-  [Key]
+  
   public int Id { get; set; }
 
   [Required]

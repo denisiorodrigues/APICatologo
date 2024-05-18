@@ -23,7 +23,7 @@ public class ProductsController : ControllerBase
         return Ok(products);
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet("{id:int}", Name = "GetById")]
     public ActionResult<Product> GetById(int id)
     {
         var product = _apiContext.Products.FirstOrDefault(product => product.Id == id);
@@ -34,5 +34,17 @@ public class ProductsController : ControllerBase
         }
 
         return Ok(product);
+    }
+
+    [HttpPost]
+    public ActionResult Create(Product product) 
+    {
+        if(product is null)
+            return BadRequest();
+
+        _apiContext.Products.Add(product);
+        _apiContext.SaveChanges();
+
+        return new CreatedAtRouteResult("GetById", new { id = product.Id }, product);
     }
 }

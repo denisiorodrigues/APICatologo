@@ -17,7 +17,7 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Product>> Get()
     {
-        var products = _apiContext.Products.ToList();
+        var products = _apiContext.Products.Include(x => x.Category).ToList();
 
         if(products is null) return NotFound("Products not found");
 

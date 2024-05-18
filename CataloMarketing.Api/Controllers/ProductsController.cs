@@ -38,7 +38,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult Create(Product product) 
+    public ActionResult<Product> Create(Product product) 
     {
         if(product is null)
         {
@@ -52,7 +52,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    public ActionResult Update(int id, Product product) 
+    public ActionResult<Product> Update(int id, Product product) 
     {
         if(id != product.Id) 
         {
@@ -66,7 +66,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public ActionResult Delete(int id) 
+    public ActionResult<Product> Delete(int id) 
     {
         var product = _apiContext.Products.FirstOrDefault(p => p.Id == id);
 

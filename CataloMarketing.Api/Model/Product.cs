@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace CataloMarketing.Api;
 
@@ -28,5 +29,7 @@ public class Product
   public float Stok { get; set; }
   public DateTime CreatedDate { get; set; }
   public int CategoryId { get; set; }
+
+  [JsonIgnore]
   public Category? Category { get; set; }
 }

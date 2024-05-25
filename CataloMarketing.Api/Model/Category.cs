@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace CataloMarketing.Api;
 
@@ -17,5 +18,6 @@ public class Category
   [StringLength(300)]
   public string? ImageUri { get; set; }
 
+  [JsonIgnore]
   public ICollection<Product>? Products { get; set; }
 }
